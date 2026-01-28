@@ -39,6 +39,5 @@ python caesar_cipher.py
 - How to work with git
 
 ## 🔮 Future Improvements
-- Add support for multiple languages
 - Add file encryption/decryption
 - Implement other classical ciphers
