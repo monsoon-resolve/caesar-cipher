@@ -1,4 +1,5 @@
 from sys import exit
+from datetime import datetime
 
 
 def print_logo():
@@ -26,10 +27,10 @@ def print_logo():
     │     ╚██████╗██║██║     ██║  ██║███████╗██║  ██║    │ 
     │      ╚═════╝╚═╝╚═╝     ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝    │
     ╰────────────────────────────────────────────────────╯
-                
-                                            𝐵𝓎 𝓂 𝑜𝓃𝓈𝑜𝑜𝓃 𝓇𝑒𝓈𝑜𝓁𝓋𝑒
+    
+    
     ═══════════════════════════════════════════════════════════
-                                            """
+"""
     print(logo)
 
 
@@ -166,6 +167,18 @@ def brute(alp):
         else:
             print(f"\nMost likely (shift {best_shift}, confidence {best_percent:.1f}%):")
             print(f"→ {best_text}")
+    
+            while True:
+                now = datetime.now()
+                formated = now.strftime('[%d.%m.%Y] %H:%M')
+
+                fille = input('Write results to file? Y\\N\n')
+                if fille.lower() in ['y', 'yes', 'д', 'да']:
+                    with open('results', 'a') as f:
+                        f.write(f'{formated}\n{best_text}\n\n')
+                    break
+                else:
+                    break      
 
 
 #  AFTER-ACTION SELECTION FUNCTION
@@ -205,7 +218,7 @@ def greeting_window():
     print('What mode do you want to use?')
     while True:
         try:
-            dore = int(input('[1] Encryption        [2] decryption\n[3] Brute-Force       [4] Exit\n→ '))
+            dore = int(input('[1] Encryption        [2] Decryption\n[3] Brute-Force       [4] Exit\n→ '))
             if 1 <= dore <= 3:
                 break
             elif dore == 4:

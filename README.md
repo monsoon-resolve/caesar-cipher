@@ -37,7 +37,8 @@ python caesar_cipher.py
 - Text analysis and pattern recognition
 - How to format Markdown
 - How to work with git
+- How to work with datetime library
 
-## 🔮 Future Improvements
-- Add file encryption/decryption
-- Implement other classical ciphers
+## Latest Updates
+- Added Russian language
+- Added a function for writing results to a file
